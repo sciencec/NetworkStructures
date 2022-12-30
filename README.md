@@ -6,11 +6,11 @@ Since deploying a (near) real-time, turn-based multiplayer application via a cli
 
 In this context, the SignalR library is of particular importance, since in principle it cannot be ensured that all recruited participants of a multi-user experiment are connected to the server via a browser that supports WebSockets transport, currently the most powerful transport model. SignalR enables the establishment of a bidirectional connection between .NET code on a server and JavaScript code of a web application in any popular browser by checking which transport mechanism can be used when establishing the connection. If the client browser does not support the HTML5 standard or does not fully support it, SignalR can fall back on older transports to synchronize the multiplayer system, even if participants are connected through older browsers that do not support WebSockets.
 
-*Settings
+*Settings*
 
 The application can implement a large number of variations of the described paradigm through a variety of settings - group size, number of rounds, images for items used, number of items, payoff and noise specifications, extent and duration of visibility of patterns and scores of all players or any subgroups, various options in graphical representation of score history, specification of maximum time to submit a solution. In addition, an experiment can be localized with a suitable editor, i.e. conducted in any language.
 
-*Program flow
+*Program flow*
 
 As soon as a potential player connects to the website at a given time via a sent link with a special ID, the application first checks if there is a current session. If there is no current session with a free seat for another player, a new session is created and the person is added as the first player, otherwise - if the number of teammates is less than the scheduled number - the person is assigned to the session and directed to a page called the "waiting room", where a counting down clock indicates the waiting time until the latest possible start of the experiment. If all scheduled participants have registered by this time, the experiment will begin immediately after the last required participant has registered. If the number of scheduled participants is not reached, but a minimum number to be specified in the settings is connected, all unoccupied seats are filled by "virtual" players, for whom the application simulates user behavior according to a predefined plan, and the experiment is also started. If the number of connected "real" players is less than the required minimum number at the time the waiting period expires, the application is terminated and the players waiting at that time are prompted to reconnect at another time assigned to them by the experiment administrators.
 
@@ -25,6 +25,6 @@ Since it cannot be verified that the use of a server-controlled timer can guaran
 
 In a special administration area of the application, an investigator can both fully trace the history of past sessions and monitor the progress of a session in real time. To this end, the administration view establishes a bi-directional connection to the server via SignalR, allowing it to view all data sent and received by clients and the server, and to check the status of a session. Finally, a special hierarchical view of the processed data from the database allows viewing and downloading detailed information about each action performed by a specific user in a round, as well as the corresponding aggregated data of a single subject or the entire study.
 
-*Source Availability
+*Source code availability*
 
 Source code for the application will be made available at http://github.com/sciencec/networkstructures/ as of the publication date of the journal article.
