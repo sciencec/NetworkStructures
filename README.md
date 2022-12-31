@@ -19,7 +19,7 @@ The experiment session consists of a number of runs specified in the settings. T
 If player data is missing after the current round is completed, it is automatically determined from previous rounds for the next round and entered into the database before the next round is started. To ensure synchronization, the data required for display on a client is also transferred with the start call. The processing of all actions in the browser is handled by JavaScript functions.
 Since it cannot be verified that the use of a server-controlled timer can guarantee that the editing options are actually available to the user for a certain period of time, the start of the display, the end of the editing phase and the end of the display of the experiment screen are controlled by a JavaScript timer. At the end of the round, this timer also reads all collected data from specially created hidden controls and sends it back to the server via SignalR, which processes it and writes it to the database.
 
-*Program flow control and data output*.
+*Application monitoring and data output*.
 
 In a special administration area of the application, an investigator can both fully trace the history of past sessions and monitor the progress of a session in real time. To this end, the administration view establishes a bi-directional connection to the server via SignalR, allowing it to view all data sent and received by clients and the server, and to check the status of a session. Finally, a special hierarchical view of the processed data from the database allows viewing and downloading detailed information about each action performed by a specific user in a round, as well as the corresponding aggregated data of a single subject or the entire study.
 
