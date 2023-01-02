@@ -8,7 +8,7 @@ In this context, the SignalR library is of particular importance, since in princ
 
 *Settings*
 
-The application can implement a large number of variations of the described paradigm through a variety of settings - group size, number of rounds, images for items used, number of items, payoff and noise specifications, extent and duration of visibility of patterns and scores of all players or any subgroups, various options in graphical representation of score history, specification of maximum time to submit a solution. In addition, an experiment can be localized with a suitable editor, i.e. conducted in any language.
+The application allows to realize a large number of variations of the described paradigm through a variety of settings - e.g. group size, number of rounds, images for the used items, number of items, payoff rates and noise values, extent and duration of visibility of patterns and results of all players or any subgroups, various options in graphical representation of the game progress, specification of the maximum time to submit a solution. Moreover, an experiment can be localized with a suitable editor view, i.e. run on the same web page in any language.
 
 *Program flow*
 
